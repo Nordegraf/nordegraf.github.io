@@ -1,0 +1,14 @@
+.navbar {
+    border-bottom: 3px solid $blue;
+}
+
+hr.posts {
+    border: 1px dashed $blue;
+    border-top: 0px
+}
+
+hr.footer {
+    color: $blue;
+    border: 3px solid $blue;
+    border-top: 0px;
+}

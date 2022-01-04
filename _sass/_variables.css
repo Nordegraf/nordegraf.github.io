@@ -1,0 +1,11 @@
+$body-bg: $bg;
+
+$navbar-dark-color:                 rgba($blue, .6);
+$navbar-dark-hover-color:           rgba($blue, .85);
+$navbar-dark-active-color:          $blue;
+$navbar-dark-disabled-color:        rgba($blue, .25);
+$navbar-dark-toggler-border-color:  rgba($blue, .1);
+
+$hr-opacity: 1;
+
+$fa-font-path:        "../fonts/fontawesome";

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<!-- Blog Entries -->
+<div class="container px-4 py-3">
+  <hr class="posts">
+  {% for post in paginator.posts %}
+      {% include preview.html %}
+      <hr class="posts">
+  {% endfor %}
+</div>
+
+
+<!-- Pagination -->
+{% if paginator.total_pages > 1 %}
+<div class="d-flex justify-content-center align-items-center">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&lt;</a>&nbsp;
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>&nbsp;
+    {% elsif page == 1 %}
+      <a href="{{ '/' | relative_url }}">{{ page }}</a>&nbsp;
+    {% else %}
+      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>&nbsp;
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">&gt;</a>
+  {% endif %}
+</div>
+{% endif %}

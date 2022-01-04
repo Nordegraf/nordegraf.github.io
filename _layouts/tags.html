@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div>
+    <h1>Articles tagged with {{ page.tagged }}</h1>
+    <ul style='padding-top: 16px;'>
+
+    {% for post in site.posts %}
+      {% if post.tags contains page.tagged %}
+        {% include preview.html %}
+      {% endif %}
+    {% endfor %}
+
+    </ul>
+</div>
