@@ -27,7 +27,6 @@ url: "https://nordegraf.github.io/blog/" # the base hostname & protocol for your
 github_username:  nordegraf
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
