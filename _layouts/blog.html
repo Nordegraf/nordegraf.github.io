@@ -3,14 +3,11 @@ layout: default
 ---
 
 <!-- Blog Entries -->
-<div class="container px-4 py-3">
-  <hr class="posts">
-  {% for post in paginator.posts %}
-      {% include preview.html %}
-      <hr class="posts">
-  {% endfor %}
-</div>
-
+<hr class="posts">
+{% for post in paginator.posts %}
+    {% include preview.html %}
+    <hr class="posts">
+{% endfor %}
 
 <!-- Pagination -->
 {% if paginator.total_pages > 1 %}
