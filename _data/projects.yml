@@ -1,0 +1,6 @@
+- name: This Webpage
+  link: https://github.com/Nordegraf/blog
+  description: Built using Jekyll and Bootstrap
+  img:
+    - path: /assets/img/projects/blog/blog.jpg
+      description: Some code for this webpage
