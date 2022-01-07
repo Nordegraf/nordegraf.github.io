@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for project in site.data.projects %}
+    <div class="col">
+      <div class="card mb-3 d-flex align-items-stretch">
+
+        <!-- Card Head Img -->
+        {% if project.img %}
+          <div class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000"> <!-- 10 seconds -->
+            <div class="carousel-inner">
+              {% for img in project.img %}
+              <div class="carousel-item {% if img.path == project.img.first.path or project.img.size == 1 %}active{% endif %}">
+                  <img
+                    class="card-img-top"
+                    src="{{ img.path | relative_url }}"
+                    {% if img.description %}
+                      alt="{{ img.description }}"
+                    {% endif %}
+                    style="height: 10rem; object-fit: cover;"
+                  >
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <div style="min-height: 10rem;">&nbsp;</div>
+        {% endif %}
+
+        <!-- Card Body -->
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title">{{ project.name }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <div class="btn-group" role="group">
+            {% if project.link %}
+              <a
+                href="{{ project.link }}"
+                class="btn btn-primary mt-auto align-self-start"
+              >
+                <i class="fab fa-github" title="Github Repository"></i>
+              </a>
+            {% endif %}
+            {% if project.post %}
+              <a
+                href="{{ project.post }}"
+                class="btn btn-primary mt-auto align-self-start"
+              >
+                Blog Post
+              </a>
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>

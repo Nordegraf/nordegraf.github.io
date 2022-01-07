@@ -12,3 +12,9 @@ hr.footer {
     border: 3px solid $blue;
     border-top: 0px;
 }
+
+.btn-primary:hover {
+    color: $blue;
+    background-color: $bg;
+    border-color: $blue;
+}

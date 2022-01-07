@@ -1,10 +1,15 @@
 <footer>
   <hr class="footer">
     <span style="font-size: large;">
-      <a href="https://github.com/Nordegraf"><i class="fab fa-github"></i></a>&nbsp;
-      <a href="https://gitlab.com/nordegraf"><i class="fab fa-gitlab"></i></a>
+      <a href="https://github.com/Nordegraf"><i class="fab fa-github" title="GitHub Account"></i></a>&nbsp;
+      <a href="https://gitlab.com/nordegraf"><i class="fab fa-gitlab" title="GitLab Account"></i></a>&nbsp;
+      <a href="mailto:{{ site.email }}"><i class="fas fa-envelope" title="E-Mail Adresse"></i></a>&nbsp;
+      <a href="https://www.reddit.com/user/not_nordegraf"><i class="fab fa-reddit" title="Reddit Account"></i></a>&nbsp;
+      <a href="https://twitter.com/TheNichelangelo"><i class="fab fa-twitter" title="Twitter Account"></i></a>&nbsp;
+      <a href="{{ relativebase }}/feed.xml"><i class="fas fa-rss-square" title="Atom Feed"></i></a>
     </span><br>
     <span style="font-size: small;">
       &copy; Copyright 2022 Niklas Conen&nbsp;
     </span>
+    <script src="{{ "/assets/js/bootstrap.bundle.min.js" | relative_url }}"></script>
 </footer>

@@ -15,3 +15,9 @@ Additionally I'm currently finishing my bachelor thesis in bioinformatics on tra
 I have experience in several programming languages most notably **Python** and **C++**. Moreover I have some experience in **Lua**, **Haskell**, **Octave/MatLab** and **Java**.
 
 For personal projects I aquired knowledge in multiple database systems like **MariaDB**, **MySQL**, **PostgreSQL**, **SQLite** and **MongoDB**, microcontrollers including **Raspberry Pi**, **ESP8266**, **ESP32** and **Arduino**, DevOps like **Docker**, **Docker Compose** or simple tasks in the CI/CD Pipelines of GitLab and GitHub and simple Frontend Development using **HTML**, **SCSS** and **JavaScript**.
+
+### Volunteer Work
+I'm volunteering for the patient advisory board of the Cystic Fibrosis clinic of the university hospital Frankfurt. Among other things I'm maintaining their website.
+Additionaly I'm a member of the Mukoviszidose eV.
+
+During my bachelors degree I've bin an active part of the student body of the computer science faculty.
