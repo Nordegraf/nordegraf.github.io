@@ -274,6 +274,7 @@ DEPENDENCIES
   github-pages (~> 219)
   jekyll-feed (~> 0.15.1)
   jekyll-paginate
+  jekyll-theme-primer
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)

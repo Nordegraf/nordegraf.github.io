@@ -3,4 +3,17 @@
   description: Built using Jekyll and Bootstrap
   img:
     - path: /assets/img/projects/blog/blog.jpg
-      description: Some code for this webpage
+      description: Some code for this webpage as image
+
+- name: unsat_flow
+  link: https://github.com/Nordegraf/unsat_flow
+  description: UG4 app for modelling density driven flow in unsaturated porous media. Written for my bachelors thesis.
+  img:
+    - path: /assets/img/projects/unsat_flow/trench_clay.1423.png
+      description: pressure profile of simulated salt water intrusion into a domain filled with clay below a drainage trench
+    - path: /assets/img/projects/unsat_flow/trench_c.0067.png
+      description: concentration profile of simulated salt water intrusion into a domain filled with clay below a drainage trench
+    - path: /assets/img/projects/unsat_flow/henry_geschw.png
+      description: streamlines in a modified henry testcase with an unsaturated zone
+    - path: /assets/img/projects/unsat_flow/henry_isochlors.png
+      description: isochlors in the henry testcase simulated using unsat_flow
