@@ -13,12 +13,12 @@
   {% endif %}
 </p>
 
-{% assign numtags = post.tags | size %}
 <!--Tags if any are given-->
-{% if numtags != 0 %}
+{% if post.tags.size > 0 %}
   <span style="font-size: small;">Tags:
     {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>,&nbsp;
+      <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
+      {% unless forloop.last %},&nbsp;{% endunless %}
     {% endfor %}
   </span>
 {% endif %}
