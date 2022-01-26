@@ -20,4 +20,4 @@ For personal projects I aquired knowledge in multiple database systems like **Ma
 I'm volunteering for the patient advisory board of the Cystic Fibrosis clinic of the university hospital Frankfurt. Among other things I'm maintaining their website.
 Additionaly I'm a member of the Mukoviszidose eV.
 
-During my bachelors degree I've bin an active part of the student body of the computer science faculty.
+During my bachelors degree I've been an active part of the student body of the computer science faculty.
