@@ -1,15 +1,15 @@
 title: Nordegraf's Blog
 email: conen@stud.uni-frankfurt.de
 description: >-
-  My Personal Blog
+  Nordegraf's Personal Blog
 baseurl: "/blog"
 url: "https://nordegraf.github.io/blog/"
-github_username:  nordegraf
 
 # Build settings
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-seo-tag
 
 sass:
   sass_dir: _sass
