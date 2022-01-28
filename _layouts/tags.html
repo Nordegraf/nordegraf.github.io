@@ -9,8 +9,16 @@ layout: default
         {% include preview.html %}
       {% endif %}
     {% endfor %}
-
     </ul>
 </div>
 
-{% include pagination.html %}
+<script type="text/javascript">
+  function setDivHeight(textDiv, imgDiv) {
+    document.getElementById(imgDiv).setAttribute("style",`height: ${document.getElementById(textDiv).clientHeight}px;`)
+  }
+  {% for post in site.posts %}
+    {% if post.thumbnail and post.tags contains page.tagged%}
+      setDivHeight("{{ post.id | append: 'text' }}", "{{ post.id | append: 'img' }}")
+    {% endif %}
+  {% endfor %}
+</script>
