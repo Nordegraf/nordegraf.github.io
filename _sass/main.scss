@@ -22,6 +22,11 @@ time {
     color: $text;
 }
 
-.nav-item:last-child {
-    margin-right: -0.5rem;
+.pagination-a {
+    text-decoration: none;
+}
+
+.pagination-a:hover {
+    color: $bg;
+    text-decoration: none;
 }

@@ -4,7 +4,6 @@ layout: default
 
 <div>
     <h2>Posts tagged with {{ page.tagged }}</h2>
-
     {% for post in site.posts %}
       {% if post.tags contains page.tagged %}
         {% include preview.html %}
@@ -13,3 +12,5 @@ layout: default
 
     </ul>
 </div>
+
+{% include pagination.html %}

@@ -2,6 +2,10 @@
     border-bottom: 3px solid $blue;
 }
 
+.nav-item:last-child {
+    margin-right: -0.5rem;
+}
+
 hr.posts {
     border: 1px dashed $blue;
     border-top: 0px
@@ -17,4 +21,13 @@ hr.footer {
     color: $blue;
     background-color: $bg;
     border-color: $blue;
+}
+
+.blogpost {
+    background-color: #001930;
+}
+
+.post-thumbnail {
+    width: 100%;
+    object-fit: cover;
 }

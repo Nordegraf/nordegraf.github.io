@@ -1,8 +1,7 @@
 ---
 layout: default
-title: About
+title: About Me
 ---
-### About me
 Currently undergrad in computer science and bioinformatics at Goethe University Frankfurt.
 
 I have a strong interest in computational science, high performance computing and solving methods for differential equations. During my undergrad studies I began specialisation in these subjects and intend to expand on my knowledge during my graduate studies.
