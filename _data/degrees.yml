@@ -1,0 +1,40 @@
+- title: B.Sc. Computer Science
+  type: Bachelor
+  location: Goethe University Frankfurt
+  grade: 1.4
+  started: 2018
+  finished: 2022
+  thesis: Simulation dichtegetriebener Strömungen in ungesättigten porösen Medien
+  thesis_engl: Simulation of density driven flow in unsaturated porous media
+  lectures:
+    - Introduction to Distributed Systems
+    - Introduction to Computer Graphics
+    - Natural Language Processing-based Data Science
+    - Modelling and Simulation I
+    - High Performance Computer Architectures
+    - Introduction to Physics I/ II
+
+- title: B.Sc. Bioinformatics
+  type: Bachelor
+  location: Goethe University Frankfurt
+  grade: 1.9
+  started: 2017
+  finished: 2022
+  thesis: Hydrochemische Modellierung des Stickstoffeintrags durch landwirtschaftliche Nutzflächen in Regionen mit Trinkwasserbrunnen
+  thesis_engl: Hydrochemical modelling of nitrogen deposition on agricultural land in regions with drinking water wells
+  lectures:
+    - Bioinformatics Foundations
+    - Algorithms and Models of Bioinformatics
+    - Structual Bioinformatics
+    - Organic Chemistry
+    - Biochemistry
+    - Molecular Biology
+    - Cell Biology
+    - Microbiology
+    - Neuroscience
+    - Genetics
+
+- title: M.Sc. Computer Science
+  type: Master
+  location: Karlsruhe Institute of Technology
+  started: 2022

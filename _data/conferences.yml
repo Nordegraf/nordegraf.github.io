@@ -1,0 +1,8 @@
+- name: IVth KAUST MaS Workshop on Modelling and Simulation
+  institution: King Abdullah University of Science and Technology
+  city: Thuwal
+  country: Saudi-Arabia
+  year: 2022
+  link: https://cemse.kaust.edu.sa/events/event/ivth-kaust-mas-workshop-modelling-and-simulation
+  talk: Modelling unsaturated, density driven flow using a generalized Richards equation
+  role: speaker

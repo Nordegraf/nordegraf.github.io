@@ -2,7 +2,7 @@
   <div class="row g-0">
     <div class="col{% if post.thumbnail %}-md-8{% endif %}">
       <div class="card-body" id="{{ post.id | append: 'text' }}">
-        <p class="card-title"><time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
+        <p class="about"><time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
         <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="card-title">{{ post.title }}</h3></a>
         <p class="card-text">
           {% if post.excerpt_separator %}
@@ -15,7 +15,7 @@
           {% if post.tags.size > 0 %}
           <span style="font-size: small;">Tags:
             {% for tag in post.tags %}
-              <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
+              <a class="link" href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
               {% unless forloop.last %},&nbsp;{% endunless %}
             {% endfor %}
           </span>

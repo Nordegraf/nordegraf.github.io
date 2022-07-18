@@ -1,0 +1,125 @@
+---
+layout: default
+title: About Me
+---
+<p> Graduate student in computer science at Karlsruhe Institute of Technology</p>
+
+<p>Mainly interested in computational science, high performance computing and solving methods for differential equations</p>
+
+<div class="py-3">
+<h3>Education</h3>
+
+<hr class="about">
+{% for degree in site.data.degrees %}
+{% assign deg = degree.title | replace: " " | replace: "." %}
+<div class="card about" style="width: 100%;">
+  <div class="card-body about" {% if degree.thesis %} type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ deg }}" aria-expanded="false" aria-controls="collapse{{ deg }}" {% endif %}>
+    <h5 class="card-title about">{{ degree.title }}</h5>
+    <p class="about">
+      {% if degree.grade %}&#8709 {{ degree.grade }}<br>{% endif %}
+      <i class="fa-solid fa-calendar-days"></i> {{ degree.started }} - {% if degree.finished %} {{ degree.finished }} {% else %} ongoing {% endif %}<br>
+      <i class="fa-solid fa-location-dot"></i> {{ degree.location }}
+    </p>
+  </div>
+  {% if degree.thesis %}
+  <div class="card-body collapse about-collapse" id="collapse{{ deg }}">
+    <p>
+      {{ degree.type }} Thesis:<br>
+      {{ degree.thesis }}<br>
+      (engl.: {{ degree.thesis_engl }})
+    </p>
+    {% if degree.lectures %}
+    <p>Some lectures I attended during my studies:</p>
+    <ul>
+      {% for lecture in degree.lectures %}
+        <li class="text">{{ lecture }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+<hr class="about">
+{% endfor %}
+</div>
+
+<div class="py-3">
+<h3>Conferences</h3>
+<p>
+Some conferences and workshops i attended:
+</p>
+
+<hr class="about">
+{% for conference in site.data.conferences %}
+{% assign con = conference.name | replace: " " %}
+<div class="card about" style="width: 100%;">
+  <div class="card-body about" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ con }}" aria-expanded="false" aria-controls="collapse{{ con }}">
+    <h5 class="card-title about">{{ conference.name }}</h5>
+    <p class="about">
+      <i class="fa-solid fa-calendar-days"></i> {{ conference.year }}<br>
+      <i class="fa-solid fa-location-dot"></i> {{ conference.institution }}, {{ conference.city }}, {{ conference.country }}
+    </p>
+  </div>
+  <div class="card-body collapse about-collapse" id="collapse{{ con }}">
+    <p>
+      {% if conference.role == "speaker" %}
+      <i class="fa-solid fa-person-chalkboard"></i> Speaker<br>
+      {% endif %}
+      {% if conference.talk %}
+        Talk: {{ conference.talk}}
+      {% endif %}
+    </p>
+    <a href="{{ conference.link }}" class="about">Conference Website</a><br>
+  </div>
+</div>
+<hr class="about">
+{% endfor %}
+</div>
+
+<div class="py-3">
+<h3>Volunteer Work</h3>
+<hr class="about">
+{% for work in site.data.volunteer %}
+{% assign wor = work.name | replace: " " %}
+<div class="card about" style="width: 100%;">
+  <div class="card-body about" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ wor }}" aria-expanded="false" aria-controls="collapse{{ wor }}">
+    <h5 class="card-title about">{{ work.name }}</h5>
+    <p class="about"><i class="fa-solid fa-calendar-days"></i> {{ work.started }} - {% if work.finished %} {{ work.finished }} {% else %} ongoing {% endif %}</p>
+  </div>
+  <div class="card-body collapse about-collapse" id="collapse{{ wor }}">
+    <p>
+      {{ work.detail }}
+    </p>
+  </div>
+</div>
+<hr class="about">
+{% endfor %}
+</div>
+
+<div class="py-3">
+<h3>Experience</h3>
+<h5 class="about">Programming Languages:</h5>
+<p>
+  {% for language in site.data.programming.languages %}
+  {{ language }}{% unless forloop.last %},&nbsp;{% endunless %}
+  {% endfor %}
+</p>
+<h5 class="about">Frameworks:</h5>
+<p>
+  {% for framework in site.data.programming.frameworks %}
+  {{ framework }}{% unless forloop.last %},&nbsp;{% endunless %}
+  {% endfor %}
+</p>
+<h5 class="about">Database Systems:</h5>
+<p>
+  {% for database in site.data.programming.databases %}
+  {{ database }}{% unless forloop.last %},&nbsp;{% endunless %}
+  {% endfor %}
+</p>
+<h5 class="about">DevOps:</h5>
+<p>
+  {% for devop in site.data.programming.devops %}
+  {{ devop }}{% unless forloop.last %},&nbsp;{% endunless %}
+  {% endfor %}
+</p>
+</div>

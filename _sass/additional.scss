@@ -1,33 +1,114 @@
 .navbar {
-    border-bottom: 3px solid $blue;
+    border-bottom: 3px solid $border_hr;
 }
 
 .nav-item:last-child {
     margin-right: -0.5rem;
 }
 
+.nav-item:hover {
+    text-decoration: none;
+}
+
 hr.posts {
-    border: 1px dashed $blue;
+    border: 1px dashed $primary;
     border-top: 0px
 }
 
 hr.footer {
-    color: $blue;
-    border: 3px solid $blue;
+    color: $border_hr;
+    border: 3px solid $border_hr;
     border-top: 0px;
 }
 
+hr.about {
+    color: $text;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 70%
+}
+
+a.link {
+    color: $primary;
+    text-decoration: underline;
+    text-decoration-color: $primary;
+}
+
+a.link:hover {
+    color: $secondary;
+    text-decoration: underline;
+    text-decoration-color: $secondary;
+}
+
+a.button-p {
+    color: $bg;
+}
+
+.card-title.project:hover {
+    color: $primary;
+    text-decoration: none;
+}
+
 .btn-primary:hover {
-    color: $blue;
+    color: $secondary;
     background-color: $bg;
-    border-color: $blue;
+    border-color: $secondary;
+}
+
+.card-title:hover {
+    color: $secondary;
+    text-decoration: underline;
+    text-decoration-color: $secondary;
+}
+
+.card.about {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.card-body.about {
+    padding: 0.4rem 1rem;
+}
+
+.card-body.about-collapse {
+    padding: 0rem 1rem;
+    padding-top: 0;
+}
+
+.card-title.about {
+    color: $subheadlines;
+}
+
+.card-title.about:hover {
+    color: $subheadlines;
+    text-decoration: none;
 }
 
 .blogpost {
-    background-color: #001930;
+    background-color: $darkprimary;
+}
+
+.card.project {
+    background-color: $darkprimary;
 }
 
 .post-thumbnail {
     width: 100%;
     object-fit: cover;
+}
+
+a.about {
+    color: $text;
+}
+
+p.about {
+    color: $text;
+    display: inline;
+}
+
+h5.about {
+    color: $subheadlines;
+}
+
+li.text {
+    color: $text;
 }

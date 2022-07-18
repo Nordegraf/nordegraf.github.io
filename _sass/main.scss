@@ -1,9 +1,23 @@
-$blue: rgb(0, 195, 255);
+$primary: rgb(0, 195, 255);
+$darkprimary: #001930;
+
+$secondary: rgb(255, 174, 0);
+$darksecondary: darken($secondary, 15%);
+
 $bg: rgb(13, 19, 27);
+
+$subheadlines: rgb(139, 228, 255);
 $text: rgb(164, 203, 209);
 
+$border_hr: $primary;
+
+
 h1 {
-    color: $blue;
+    color: $primary;
+}
+
+h3 {
+    color: $primary;
 }
 
 p {
@@ -11,11 +25,19 @@ p {
 }
 
 div {
-    color: $blue;
+    color: $primary;
 }
 
 a {
-    color: $blue;
+    color: $primary;
+}
+
+a:hover {
+    color: $secondary;
+}
+
+a:visited {
+    color: darken($primary, 5%);
 }
 
 time {
@@ -23,10 +45,11 @@ time {
 }
 
 .pagination-a {
+    color: $primary;
     text-decoration: none;
 }
 
 .pagination-a:hover {
-    color: $bg;
+    color: $secondary;
     text-decoration: none;
 }

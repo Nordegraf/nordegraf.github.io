@@ -1,23 +1,23 @@
 $body-bg: $bg;
 
-$navbar-dark-color:                 rgba($blue, .6);
-$navbar-dark-hover-color:           rgba($blue, .85);
-$navbar-dark-active-color:          $blue;
-$navbar-dark-disabled-color:        rgba($blue, .25);
-$navbar-dark-toggler-border-color:  rgba($blue, .1);
+$navbar-dark-color:                 rgba($primary, .6);
+$navbar-dark-hover-color:           rgba($secondary, .85);
+$navbar-dark-active-color:          $primary;
+$navbar-dark-disabled-color:        rgba($primary, .25);
+$navbar-dark-toggler-border-color:  rgba($primary, .1);
 
 $pagination-bg:                     rgba(0, 0, 0, .2);
 $pagination-border-color:           rgba(0, 0, 0, .8);
 
-$pagination-hover-color:            $bg;
-$pagination-hover-bg:               rgba($blue, .6);
-$pagination-hover-border-color:     rgba($blue, .9);
+$pagination-hover-color:            $secondary;
+$pagination-hover-bg:               rgba($primary, .6);
+$pagination-hover-border-color:     rgba($primary, .9);
 
 $pagination-active-color:           $text;
-$pagination-active-bg:              rgba($blue, .2);
-$pagination-active-border-color:    rgba($blue, .5);
+$pagination-active-bg:              rgba($primary, .2);
+$pagination-active-border-color:    rgba($primary, .5);
 
-$pagination-disabled-color:         rgba($blue, .2);
+$pagination-disabled-color:         rgba($primary, .2);
 $pagination-disabled-bg:            rgba(0, 0, 0, .4);
 $pagination-disabled-border-color:  rgba(0, 0, 0, .8);
 

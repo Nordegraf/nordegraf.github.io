@@ -1,0 +1,26 @@
+languages:
+  - Python
+  - C/C++
+  - Lua
+  - Java
+  - Haskell
+  - Octave/Matlab
+databases:
+  - MySQL
+  - MariaDB
+  - PostgreSQL
+  - SQLite3
+  - MongoDB
+frameworks:
+  - CUDA
+  - OpenCL
+  - Vulkan
+  - OpenMP
+  - OpenMPI
+devops:
+  - Docker
+  - docker-compose
+  - CI/CD Pipelines on GitLab/GitHub
+embedded:
+  - Raspberry Pi
+  - ESP32/ESP8266

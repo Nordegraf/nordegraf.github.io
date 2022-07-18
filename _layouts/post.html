@@ -10,7 +10,7 @@ layout: default
 {% if page.tags.size > 0 %}
   <span style="font-size: small;">This post is tagged with:
     {% for tag in page.tags %}
-      <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
+      <a class="link" href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
       {% unless forloop.last %},&nbsp;{% endunless %}
     {% endfor %}
   </span>
