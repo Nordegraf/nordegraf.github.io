@@ -7,7 +7,7 @@
 
 - name: unsat_flow
   link: https://github.com/Nordegraf/unsat_flow
-  description: UG4 app for modelling density driven flow in unsaturated porous media. Written for my bachelors thesis in computer science.
+  description: UG4 app for modelling density driven flow in unsaturated porous media using a generalized Richards Equation. Written for my bachelors thesis in computer science.
   img:
     - path: /assets/img/projects/unsat_flow/trench_clay.1423.png
       description: pressure profile of simulated salt water intrusion into a domain filled with clay below a drainage trench
@@ -20,7 +20,7 @@
 
 - name: porous_media_nitrification
   link: https://github.com/Nordegraf/porous_media_nitrification
-  description: UG4 app for modelling nitrification processes in unsaturated porous media domains. The model equations were developed by me, based on the results of my first bachelors thesis. Supports modelling of Dirac sources and sinks. Written for my bachelors thesis in bioinformatics.
+  description: UG4 app for modelling nitrification processes in unsaturated porous media domains. The model equations were developed by me, based on the results of my first bachelors thesis. Written for my bachelors thesis in bioinformatics.
   img:
     - path: /assets/img/projects/porous_media_nitrification/geschw.jpg
       description: pressure profile of a simulation in a square domain using a dirac sink. painted in are streamlines showing the velocity field.
@@ -30,3 +30,7 @@
       description: ammonium profile of a simulation in a square domain using a dirac sink. the phreatic surface is drawn in green.
     - path: /assets/img/projects/porous_media_nitrification/well3D_4_c.png
       description: pressure profile in a quadratic domain, showing the 3D phreatic surface.
+
+- name: SKdatToXML
+  link: https://github.com/Nordegraf/SKdatToXML
+  description: Java Tool for converting Spiral Knights binary .dat files to .xml using the .jar libraries shipped with the game.
