@@ -102,13 +102,35 @@ a.about {
 
 p.about {
     color: $text;
-    display: inline;
+    padding: 0 0;
+    margin-bottom: 0;
 }
 
 h5.about {
     color: $subheadlines;
+    margin-bottom: 0rem;
 }
 
 li.text {
     color: $text;
+}
+
+.accordion-button.about {
+    color: $subheadlines;
+    padding: 0 0rem;
+
+}
+
+.accordion-body.about {
+    padding: 0 0rem;
+    padding-top: 0.6rem;
+}
+
+.accordion-item.about {
+    padding: 0.4rem 1rem;
+    width: 70%;
+}
+
+h2.about {
+    color: $subheadlines;
 }
