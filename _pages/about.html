@@ -91,6 +91,26 @@ Some conferences and workshops i attended:
 </div>
 </div>
 
+<div class="py-3">
+<h3>Scholarships</h3>
+<div class="col-md-8 accordion accordion-flush" id="accordionConferences">
+  <hr class="about">
+  {% for scholarship in site.data.scholarships %}
+  {% assign sco = scholarship.name | replace: " " %}
+  <div class="accordion-item about">
+    <h2 class="accordion-header" id="flush-heading{{ sco }}">
+      <h5 class="about">{{ scholarship.name }}</h5>
+      </button>
+    </h2>
+    <p class="about">
+      <i class="fa-solid fa-calendar-days"></i> {{ scholarship.when }}<br>
+    </p>
+  </div>
+  <hr class="about">
+  {% endfor %}
+</div>
+</div>
+
 
 <div class="py-3">
 <h3>Volunteer Work</h3>
