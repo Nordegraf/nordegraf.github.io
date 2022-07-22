@@ -7,7 +7,7 @@ tags: spiral_knights
 excerpt_separator: <!--more-->
 ---
 
-More than 10 years ago in 2012 I stumbled upon a game called Spiral Knights in the Free-to-Play section in the Steam Store.
+More than 10 years ago in 2012 I stumbled upon a game called Spiral Knights in the Free-to-Play section of the Steam Store.
 The beautiful neon-like color scheme, cute artstyle and lovely story got me hooked quite fast. And so Spiral Knights became the second MMO I played a bit more extensively after Lego Universe closed its gates the same year.
 
 <!--more-->

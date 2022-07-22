@@ -20,7 +20,7 @@
 
 - name: porous_media_nitrification
   link: https://github.com/Nordegraf/porous_media_nitrification
-  description: UG4 app for modelling nitrification processes in unsaturated porous media domains. The model equations were developed by me, based on the results of my first bachelors thesis. Written for my bachelors thesis in bioinformatics.
+  description: UG4 app for modelling nitrification processes in unsaturated porous media domains. I developed the model equations myself, based on the results of my first bachelors thesis. Written for my bachelors thesis in bioinformatics.
   img:
     - path: /assets/img/projects/porous_media_nitrification/geschw.jpg
       description: pressure profile of a simulation in a square domain using a dirac sink. painted in are streamlines showing the velocity field.
