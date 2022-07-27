@@ -28,7 +28,7 @@ title: About Me
         <i class="fa-solid fa-location-dot"></i> {{ degree.location }}
       </p>
       {% if degree.thesis %}
-      <div id="flush-collapse{{ deg }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ deg }}" data-bs-parent="#accordionDegrees">
+      <div id="flush-collapse{{ deg }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ deg }}">
         <div class="accordion-body about">
           <p>
             {{ degree.type }} Thesis:<br>
@@ -72,7 +72,7 @@ Some conferences and workshops i attended:
       <i class="fa-solid fa-calendar-days"></i> {{ conference.year }}<br>
       <i class="fa-solid fa-location-dot"></i> {{ conference.institution }}, {{ conference.city }}, {{ conference.country }}
     </p>
-    <div id="flush-collapse{{ con }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ con }}" data-bs-parent="#accordionConferences">
+    <div id="flush-collapse{{ con }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ con }}">
       <div class="accordion-body about">
         <p>
           {% if conference.role == "speaker" %}
@@ -126,7 +126,7 @@ Some conferences and workshops i attended:
       </button>
     </h2>
     <p class="about"><i class="fa-solid fa-calendar-days"></i> {{ work.started }} - {% if work.finished %} {{ work.finished }} {% else %} ongoing {% endif %}</p>
-    <div id="flush-collapse{{ wor }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ wor }}" data-bs-parent="#accordionVolunteer">
+    <div id="flush-collapse{{ wor }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ wor }}">
       <div class="accordion-body about">
         <p>
           {{ work.detail }}
