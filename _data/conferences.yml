@@ -6,3 +6,12 @@
   link: https://cemse.kaust.edu.sa/events/event/ivth-kaust-mas-workshop-modelling-and-simulation
   talk: Modelling unsaturated, density driven flow using a generalized Richards equation
   role: speaker
+
+- name: International Multigrid Conference
+  institution: Università della Svizzera italiana
+  city: Lugano
+  country: Switzerland
+  year: 2022
+  link: https://www.img2022.usi.ch
+  talk: Simulation of unsaturated density driven flow with a phreatic surface
+  role: speaker
