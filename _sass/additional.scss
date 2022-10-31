@@ -10,6 +10,11 @@
     text-decoration: none;
 }
 
+hr.post-header {
+    width: 70%;
+    color: $secondary;
+}
+
 hr.posts {
     border: 1px dashed $primary;
     border-top: 0px

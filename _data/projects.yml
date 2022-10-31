@@ -35,3 +35,11 @@
   link: https://github.com/Nordegraf/SKdatToXML
   post: Looking into how the game Spiral Knights is built
   description: Java Tool for converting Spiral Knights binary .dat files to .xml using the .jar libraries shipped with the game.
+
+- name: www.cf-selbsthilfe.de
+  link: https://github.com/CF-Selbsthilfe/cf-selbsthilfe.de
+  post: New website for the CF-Selbsthilfe Frankfurt e.V.
+  description: Website of the CF-Selbsthilfe Frankfurt e.V.
+  img:
+    - path: /assets/img/projects/cf-selbsthilfe/page.jpg
+      description: screenshot of the website of the CF-Selbsthilfe Frankfurt e.V.
