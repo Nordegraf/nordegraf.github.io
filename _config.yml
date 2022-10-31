@@ -2,8 +2,8 @@ title: Nordegraf's Blog
 email: niklas.conen@student.kit.edu
 description: >-
   Nordegraf's Personal Blog
-baseurl: "/blog"
-url: "https://nordegraf.github.io/blog/"
+baseurl: "/"
+url: "https://nordegraf.github.io/"
 
 # Build settings
 plugins:
