@@ -9,7 +9,7 @@ excerpt_separator: <!--more-->
 
 A few weeks ago the CF-Selbsthilfe Frankfurt e.V. reached out to me for help with their website. They are a non-profit organization that supports people with cystic fibrosis and their families in Frankfurt and the surrounding area, including my family when I was diagnosed. Naturally I offered to help them without hesitation.
 
-I'm happy to announce, that their new site is now live here: <a class="link" href="https://cf-selbsthilfe.de/">cf-selbsthilfe.de</a>.
+I'm happy to announce, that their new site is now live here: <a class="link" href="https://www.cf-selbsthilfe.de/">cf-selbsthilfe.de</a>.
 
 <!--more-->
 
