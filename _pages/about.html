@@ -24,16 +24,21 @@ title: About Me
       </h2>
       <p class="about">
         {% if degree.grade %}&#8709 {{ degree.grade }}<br>{% endif %}
-        <i class="fa-solid fa-calendar-days"></i> {{ degree.started }} - {% if degree.finished %} {{ degree.finished }} {% else %} ongoing {% endif %}<br>
+        <i class="fa-solid fa-calendar-days"></i> {{ degree.started }}
+        {% if degree.finished != degree.started %} - {% if degree.finished %} {{ degree.finished }} {% else %} ongoing {% endif %} {% endif %}<br>
         <i class="fa-solid fa-location-dot"></i> {{ degree.location }}
       </p>
       {% if degree.thesis %}
       <div id="flush-collapse{{ deg }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ deg }}">
         <div class="accordion-body about">
           <p>
+            {% if degree.type %}
             {{ degree.type }} Thesis:<br>
+            {% endif %}
             {{ degree.thesis }}<br>
+            {% if degree.thesis_engl %}
             (engl.: {{ degree.thesis_engl }})
+            {% endif %}
           </p>
           {% if degree.lectures %}
           <p>Some lectures I attended during my studies:</p>
