@@ -1,0 +1,56 @@
+---
+layout: default
+title: Plants
+style: /assets/css/plants.css
+script: /assets/js/plant_library.js
+---
+
+
+
+<div class="row row-cols-2 row-cols-sm-4 row-cols-md-6">
+  <div class="col-md-2 accordion accordion-flush" id="accordionCountries">
+    <div class="accordion-item plant">
+      <h2 class="accordion-header" id="flush-headingCountries">
+        <button class="accordion-button collapsed about" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseCountries" aria-expanded="false" aria-controls="flush-collapseCountries" id="Countries">
+        <span>Country</span>
+        </button>
+      </h2>
+      <div id="flush-collapseCountries" class="accordion-collapse collapse" aria-labelledby="flush-headingCountries">
+        <div class="accordion-body filters">
+
+          {% for point in site.data["plant_countries"] %}
+          {% capture url %}plants/{{ point | replace : ' ', '_' }}{% endcapture %}
+          <button class="btn btn-primary filter-button country-button" id="{{ point | replace : ' ', '_' }}">{{ point }}</button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 accordion accordion-flush" id="accordion{{ filter.name }}">
+    <div class="accordion-item plant">
+      <h2 class="accordion-header" id="flush-heading{{ filter.name }}">
+        <button class="accordion-button collapsed about" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ filter.name }}" aria-expanded="false" aria-controls="flush-collapse{{ filter.name }}" id="{{ filter.name }}">
+        <span>Location</span>
+        </button>
+      </h2>
+      <div id="flush-collapse{{ filter.name }}" class="accordion-collapse collapse" aria-labelledby="flush-heading{{ filter.name }}">
+        <div class="accordion-body filters">
+          {% for country in site.data["plant_countries"] %}
+            {% for location in site.data["plant_locations"][country] %}
+              {% capture url %}plants/{{ point | replace : ' ', '_' }}{% endcapture %}
+              <button class="btn btn-primary filter-button location-button {{ country | replace: ' ', '_' }}" id="{{ country | replace: ' ', '_' }}_{{ location | replace : ' ', '_' }}" style="display: none;">{{ location }}</button>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="plant-content"></div>
+
+
+
+{% include pagination.html %}

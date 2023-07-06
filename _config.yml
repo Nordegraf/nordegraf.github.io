@@ -2,30 +2,39 @@ title: Nordegraf's Blog
 email: niklas.conen@student.kit.edu
 description: >-
   Nordegraf's Personal Blog
-baseurl: "/"
+baseurl:
 url: "https://nordegraf.github.io/"
 
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-seo-tag
-  - jekyll-gist
 
 sass:
   sass_dir: _sass
   style: compressed
 
-paginate: 5
+pagination:
+  enabled: true
+  per_page: 5
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
 
 exclude:
   - Gemfile
   - Gemfile.lock
 
-permalink: pretty
+permalink: /:year/:month/:day/:title.html
 
 collections:
   pages:
+    output: true
+    permalink: /:name
+
+  plants:
     output: true
     permalink: /:name
 

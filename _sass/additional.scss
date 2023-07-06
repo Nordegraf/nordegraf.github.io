@@ -139,3 +139,23 @@ li.text {
 h2.about {
     color: $subheadlines;
 }
+
+$post-height: 200px;
+
+div.carousel-post {
+    width: 100%;
+    max-height: $post-height;
+}
+
+div.post {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid yellow;
+    padding: 0;
+    max-height: $post-height;
+}
+
+img.post {
+    object-fit: cover;
+    max-height: $post-height;
+}

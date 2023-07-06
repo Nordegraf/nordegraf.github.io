@@ -12,4 +12,8 @@
       &copy; Copyright 2022 Niklas Conen&nbsp;
     </span>
     <script src="{{ "/assets/js/bootstrap.bundle.min.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/jquery-3.7.0.min.js" | relative_url }}"></script>
+    {% if page.script %}
+    <script src="{{ page.script | relative_url }}"></script>
+    {% endif %}
 </footer>
