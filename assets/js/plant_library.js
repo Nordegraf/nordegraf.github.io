@@ -4,7 +4,7 @@
 var filters = {{ site.data.filter_hierarchy | jsonify }};
 
 // variables
-$.getJSON("{{ site.url }}plants/data", function(plants) {
+$.getJSON("{{ site.url }}plants/data.json", function(plants) {
   console.log(plants);
 
   var numPlants = plants.length;
