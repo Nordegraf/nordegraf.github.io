@@ -1,7 +1,7 @@
 var filters = null;
 
 // variables
-$.getJSON("/plants/data", function(plants) {
+$.getJSON("https://nordegraf.github.io/plants/data", function(plants) {
   console.log(plants);
 
   var numPlants = plants.length;
@@ -124,7 +124,7 @@ function addPlants(attr, value, plants) {
 }
 
 function addPlant(id) {
-  return $.get("https://nordegraf.github.io//plants/"+id+".html", function(data) {
+  return $.get("https://nordegraf.github.io/plants/"+id+".html", function(data) {
     $("#plant-content").append(data);
   }).promise();
 }
