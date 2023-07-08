@@ -4,7 +4,7 @@
 var filters = {{ site.data.filter_hierarchy | jsonify }};
 
 // variables
-$.getJSON("{{ site.baseurl }}/plants/data", function(plants) {
+$.getJSON("{{ site.url }}plants/data", function(plants) {
   console.log(plants);
 
   var numPlants = plants.length;
@@ -127,7 +127,7 @@ function addPlants(attr, value, plants) {
 }
 
 function addPlant(id) {
-  return $.get("{{ site.url }}/plants/"+id+".html", function(data) {
+  return $.get("{{ site.url }}plants/"+id+".html", function(data) {
     $("#plant-content").append(data);
   }).promise();
 }
