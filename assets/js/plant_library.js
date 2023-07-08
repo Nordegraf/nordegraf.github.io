@@ -127,7 +127,7 @@ function addPlants(attr, value, plants) {
 }
 
 function addPlant(id) {
-  return $.get("{{ site.baseurl }}/plants/"+id+".html", function(data) {
+  return $.get("{{ site.url }}/plants/"+id+".html", function(data) {
     $("#plant-content").append(data);
   }).promise();
 }
