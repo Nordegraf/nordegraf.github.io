@@ -11,8 +11,6 @@ $text: rgb(164, 203, 209);
 
 $border_hr: $primary;
 
-
-
 .plant-container {
     position: relative;
     aspect-ratio: 1/1;
@@ -112,3 +110,59 @@ button.plant-category {
     border: $secondary 1px solid;
 
 }
+
+img.plant-img {
+    border-radius: 5px;
+}
+
+iframe.plant-map {
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.grid {
+    max-width: 100%;
+}
+
+/* clearfix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+.grid-sizer,
+.grid-item {
+  width: 20%;
+}
+
+.grid-item {
+  float: left;
+  border-radius: 5px;
+}
+
+.grid-item-carousel {
+    width: calc(60% - 0.5rem);
+    height: fit-content;
+    margin: 0 0.25rem;
+}
+
+.grid-item-profile {
+    width: calc(40% - 0.5rem);
+    height: fit-content;
+    margin: 0 0.25rem;
+    padding: 0.5rem;
+    border: 2px solid $primary;
+}
+
+.grid-item-notes {
+    width: fit-content;
+    max-width: calc(100% - 0.5rem);
+    min-width: calc(60% - 0.5rem);
+    height: auto;
+    margin: 0.5rem 0.25rem;
+    padding: 0.5rem;
+    border: 2px solid $primary;
+}
+

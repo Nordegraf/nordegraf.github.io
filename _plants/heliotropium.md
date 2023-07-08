@@ -8,14 +8,11 @@ images:
     - path: assets/img/plants/saudi_arabia/heliotropium/heliotropium.jpg
       alt: Heliotropium
       description: Heliotropium
+coordinates: 23.41828100224373, 38.95569383769491
 ---
 
 definitely family of Boraginaceae and genus of Heliotropium
-<img src="{{ "assets/img/posts/23-04-01/heliotropium.jpg" | relative_url }}"
-     class="img-fluid mx-auto d-block w-100"
-     alt="pearl millet plant on a field in saudi arabia"
-     style="max-width: 400px;"
-     >
+
 https://agjsr.agu.edu.bh/uploads/images/papers/pdfs/34b9a3249943e9f0b55db5567f9fecf2_60a134f1002f5.pdf
 
 https://www.plantdiversityofsaudiarabia.info/Biodiversity-Saudi-Arabia/Flora/Checklist/Cheklist.htm

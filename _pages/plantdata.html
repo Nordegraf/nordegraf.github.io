@@ -8,9 +8,12 @@ permalink: /plants/data.json
         "name": "{{ plant.name }}"
         {% for attr in site.data["filter_attributes"] %}
             {% if plant[attr] %}
-            ,"{{ attr }}": "{{ plant[attr] }}"
+            ,"{{ attr }}": ["{{ plant[attr] }}"]
             {% endif %}
         {% endfor %}
+        {% if plant["hide"] %}
+        ,"hide": true
+        {% endif %}
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}

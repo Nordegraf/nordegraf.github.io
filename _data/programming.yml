@@ -3,8 +3,9 @@ languages:
   - C/C++
   - Lua
   - Java
-  - Haskell
+  - Ruby
   - Octave/Matlab
+  - Haskell
 databases:
   - MySQL
   - MariaDB

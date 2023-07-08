@@ -68,6 +68,7 @@ module Plants
         filter_classes(site, site.collections['plants'].docs[0])
       end
 
+
       def filter_classes(site, doc)
         classes = {}
         for doc in site.collections['plants'].docs
@@ -86,6 +87,12 @@ module Plants
         site.data["filter_classes"] = classes
         Jekyll.logger.info "classes: ", classes
       end
+
+      def merge_doubles(site, doc1, doc2)
+        doc1.content = doc1.content + doc2.content
+        doc2.data['hide'] = true
+      end
+
 
       def jsonfy_plant_attributes(site, doc)
         jsonstring = "{"

@@ -4,6 +4,7 @@ description: >-
   Nordegraf's Personal Blog
 baseurl:
 url: "https://nordegraf.github.io/"
+author: Niklas Conen
 
 # Build settings
 plugins:

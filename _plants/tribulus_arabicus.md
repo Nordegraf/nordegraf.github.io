@@ -9,5 +9,6 @@ images:
       alt: Tribulus arabicus at Wadi ad-Dawasir
       description: Tribulus arabicus at Wadi ad-Dawasir
 by: Rebekka Pech
+coordinates: 20.456740229979363, 44.85280383937988
 ---
 

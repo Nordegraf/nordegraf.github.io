@@ -10,6 +10,10 @@
     text-decoration: none;
 }
 
+.container-fluid.navbarcontainer {
+    padding: 0 0;
+}
+
 hr.post-header {
     width: 70%;
     color: $secondary;
@@ -47,6 +51,10 @@ a.link:hover {
 
 a.button-p {
     color: $bg;
+}
+
+.card-title.project {
+    color: $primary;
 }
 
 .card-title.project:hover {
