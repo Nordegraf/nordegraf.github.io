@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico" />
+
+    <title>
+      New website for the CF-Selbsthilfe Frankfurt e.V. - Nordegraf's Blog
+    </title>
+  </head>
+  <body>
+    <div class="container py-3" style="max-width: 1100px">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Blog</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container px-1 py-1">
+        <h2>New website for the CF-Selbsthilfe Frankfurt e.V.</h2>
+
+        <hr class="post-header" />
+
+        <p>
+          A few weeks ago the CF-Selbsthilfe Frankfurt e.V. reached out to me
+          for help with their website. They are a non-profit organization that
+          supports people with cystic fibrosis and their families in Frankfurt
+          and the surrounding area, including my family when I was diagnosed.
+          Naturally I offered to help them without hesitation.
+        </p>
+
+        <p>
+          I’m happy to announce, that their new site is now live here:
+          <a class="link" href="https://www.cf-selbsthilfe.de/"
+            >cf-selbsthilfe.de</a
+          >.
+        </p>
+
+        <!--more-->
+
+        <p>
+          Their page is built similarly to this blog. Jekyll and Bootstrap are
+          used for a responsive layout and the final page is hosted on GitHub
+          Pages. But this time the task of hosting this site was a bit more
+          intricate. Posts are split into events and actual posts using
+          categories. Both are listed on seperate pages and need pagination,
+          which the jekyll-paginate plugin can not provide. To be able to use
+          the jekyll-paginate-v2 plugin, which solves most of these problems,
+          the page needs to be built using a
+          <a
+            class="link"
+            href="https://github.com/CF-Selbsthilfe/cf-selbsthilfe.de/blob/main/.github/workflows/jekyll.yml"
+            >GitHub Actions workflow</a
+          >.
+        </p>
+
+        <p>
+          Several actions to built Jekyll pages already exist and all of them
+          have different benefits or disadvantages. I chose
+          <a class="link" href="https://github.com/limjh16/jekyll-action-ts"
+            >jekyll-action-ts</a
+          >
+          because it uses node.js instead of a docker container and
+          automatically formats the code using
+          <a class="link" href="https://prettier.io">prettier.io</a>. To keep
+          the list of upcoming events up-to-date the page is rebuild once a week
+          using a cron job.
+        </p>
+
+        <p>
+          Events are displayed in a calendar, which is built using
+          <a class="link" href="https://fullcalendar.io">FullCalendar</a>. For
+          that a
+          <a
+            class="link"
+            href="https://github.com/CF-Selbsthilfe/cf-selbsthilfe.de/blob/main/_pages/events.html"
+            >JSON file</a
+          >
+          is generated formating all necessary data to be able to display the
+          events in the calendar. Additionally FullCalendar can display events
+          loaded from a Google Calendar or from iCalendar files, but beacause of
+          privacy concerns I decided against that for now.
+        </p>
+
+        <p>
+          To use the associations top-level domain without publishing my blog on
+          their domain I had to move the code repository to its own
+          <a class="link" href="https://github.com/CF-Selbsthilfe"
+            >GitHub Organization</a
+          >. The code is open sourced under the GNU GPLv3 license and is
+          accessible through its
+          <a
+            class="link"
+            href="https://github.com/CF-Selbsthilfe/cf-selbsthilfe.de"
+            >repository</a
+          >.
+        </p>
+
+        <p>
+          The whole project took me about two weeks and I’m really happy with
+          the result!
+        </p>
+
+        <!--Tags if any are given-->
+
+        <span style="font-size: small"
+          >This post is tagged with:
+
+          <a class="link" href="/tags/cystic-fibrosis">cystic-fibrosis</a>
+        </span>
+      </div>
+      <footer>
+        <hr class="footer" />
+        <span style="font-size: large">
+          <a class="link" href="https://github.com/Nordegraf"
+            ><i class="fa-brands fa-github" title="GitHub Account"></i></a
+          >&nbsp;
+          <a class="link" href="https://gitlab.com/nordegraf"
+            ><i class="fa-brands fa-gitlab" title="GitLab Account"></i></a
+          >&nbsp;
+          <a class="link" href="https://www.linkedin.com/in/niklas-conen/"
+            ><i class="fa-brands fa-linkedin" title="LinkedIn Account"></i></a
+          >&nbsp;
+          <a class="link" href="mailto:niklas.conen@student.kit.edu"
+            ><i class="fa-solid fa-envelope" title="E-Mail"></i></a
+          >&nbsp;
+          <a class="link" href="https://twitter.com/TheNichelangelo"
+            ><i class="fa-brands fa-twitter" title="Twitter Account"></i></a
+          >&nbsp;
+          <a class="link" href="/feed.xml"
+            ><i class="fa-solid fa-rss-square" title="Atom Feed"></i
+          ></a> </span
+        ><br />
+        <span style="font-size: small">
+          &copy; Copyright 2022 Niklas Conen&nbsp;
+        </span>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/jquery-3.7.0.min.js"></script>
+      </footer>
+    </div>
+  </body>
+</html>

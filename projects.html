@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico" />
+
+    <title>Projects - Nordegraf's Blog</title>
+  </head>
+  <body>
+    <div class="container py-3" style="max-width: 1100px">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Blog</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/projects"
+                  >Projects</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container px-1 py-1">
+        <h2>Projects</h2>
+
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card mb-3 d-flex align-items-stretch project">
+                <!-- Card Head Img -->
+
+                <div
+                  class="carousel slide carousel-fade"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/blog/blog.jpg"
+                        alt="Some code for this webpage as image"
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column">
+                  <h4 class="card-title project">This Webpage</h4>
+
+                  <p class="card-text">Built using Jekyll and Bootstrap</p>
+                  <div class="btn-group mt-auto" role="group">
+                    <a
+                      href="https://github.com/Nordegraf/blog"
+                      class="btn btn-primary button-p"
+                    >
+                      <i class="fab fa-github" title="Github Repository"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-3 d-flex align-items-stretch project">
+                <!-- Card Head Img -->
+
+                <div
+                  class="carousel slide carousel-fade"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/unsat_flow/trench_clay.1423.png"
+                        alt="pressure profile of simulated salt water intrusion into a domain filled with clay below a drainage trench"
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/unsat_flow/trench_c.0067.png"
+                        alt="concentration profile of simulated salt water intrusion into a domain filled with clay below a drainage trench"
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/unsat_flow/henry_geschw.png"
+                        alt="streamlines in a modified henry testcase with an unsaturated zone"
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/unsat_flow/henry_isochlors.png"
+                        alt="isochlors in the henry testcase simulated using unsat_flow"
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column">
+                  <h4 class="card-title project">unsat_flow</h4>
+
+                  <p class="card-text">
+                    UG4 app for modelling density driven flow in unsaturated
+                    porous media using a generalized Richards Equation. Written
+                    for my bachelors thesis in computer science.
+                  </p>
+                  <div class="btn-group mt-auto" role="group">
+                    <a
+                      href="https://github.com/Nordegraf/unsat_flow"
+                      class="btn btn-primary button-p"
+                    >
+                      <i class="fab fa-github" title="Github Repository"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-3 d-flex align-items-stretch project">
+                <!-- Card Head Img -->
+
+                <div
+                  class="carousel slide carousel-fade"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/porous_media_nitrification/geschw.jpg"
+                        alt="pressure profile of a simulation in a square domain using a dirac sink. painted in are streamlines showing the velocity field."
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/porous_media_nitrification/well.0044.jpg"
+                        alt="nitrate profile of a simulation in a square domain using a dirac sink. the phreatic surface is drawn in green."
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/porous_media_nitrification/well.0045.jpg"
+                        alt="ammonium profile of a simulation in a square domain using a dirac sink. the phreatic surface is drawn in green."
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/porous_media_nitrification/well3D_4_c.png"
+                        alt="pressure profile in a quadratic domain, showing the 3D phreatic surface."
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title project">porous_media_nitrification</h5>
+
+                  <p class="card-text">
+                    UG4 app for modelling nitrification processes in unsaturated
+                    porous media domains. I developed the model equations
+                    myself, based on the results of my first bachelors thesis.
+                    Written for my bachelors thesis in bioinformatics.
+                  </p>
+                  <div class="btn-group mt-auto" role="group">
+                    <a
+                      href="https://github.com/Nordegraf/porous_media_nitrification"
+                      class="btn btn-primary button-p"
+                    >
+                      <i class="fab fa-github" title="Github Repository"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-3 d-flex align-items-stretch project">
+                <!-- Card Head Img -->
+
+                <div style="min-height: 10rem">&nbsp;</div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column">
+                  <h4 class="card-title project">SKdatToXML</h4>
+
+                  <p class="card-text">
+                    Java Tool for converting Spiral Knights binary .dat files to
+                    .xml using the .jar libraries shipped with the game.
+                  </p>
+                  <div class="btn-group mt-auto" role="group">
+                    <a
+                      href="https://github.com/Nordegraf/SKdatToXML"
+                      class="btn btn-primary button-p"
+                    >
+                      <i class="fab fa-github" title="Github Repository"></i>
+                    </a>
+
+                    <a
+                      href="
+                
+                  
+                
+                  
+                    /2022/07/20/spiral-knights-dat-to-xml.html
+                  
+                "
+                      class="btn btn-primary button-p"
+                    >
+                      Blog Post
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-3 d-flex align-items-stretch project">
+                <!-- Card Head Img -->
+
+                <div
+                  class="carousel slide carousel-fade"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        class="card-img-top"
+                        src="/assets/img/projects/cf-selbsthilfe/page.jpg"
+                        alt="screenshot of the website of the CF-Selbsthilfe Frankfurt e.V."
+                        style="height: 10rem; object-fit: cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body d-flex flex-column">
+                  <h4 class="card-title project">www.cf-selbsthilfe.de</h4>
+
+                  <p class="card-text">
+                    Website of the CF-Selbsthilfe Frankfurt e.V.
+                  </p>
+                  <div class="btn-group mt-auto" role="group">
+                    <a
+                      href="https://github.com/CF-Selbsthilfe/cf-selbsthilfe.de"
+                      class="btn btn-primary button-p"
+                    >
+                      <i class="fab fa-github" title="Github Repository"></i>
+                    </a>
+
+                    <a
+                      href="
+                
+                  
+                    /2022/10/30/new-website-for-cf-selbsthilfe.html
+                  
+                
+                  
+                "
+                      class="btn btn-primary button-p"
+                    >
+                      Blog Post
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <hr class="footer" />
+        <span style="font-size: large">
+          <a class="link" href="https://github.com/Nordegraf"
+            ><i class="fa-brands fa-github" title="GitHub Account"></i></a
+          >&nbsp;
+          <a class="link" href="https://gitlab.com/nordegraf"
+            ><i class="fa-brands fa-gitlab" title="GitLab Account"></i></a
+          >&nbsp;
+          <a class="link" href="https://www.linkedin.com/in/niklas-conen/"
+            ><i class="fa-brands fa-linkedin" title="LinkedIn Account"></i></a
+          >&nbsp;
+          <a class="link" href="mailto:niklas.conen@student.kit.edu"
+            ><i class="fa-solid fa-envelope" title="E-Mail"></i></a
+          >&nbsp;
+          <a class="link" href="https://twitter.com/TheNichelangelo"
+            ><i class="fa-brands fa-twitter" title="Twitter Account"></i></a
+          >&nbsp;
+          <a class="link" href="/feed.xml"
+            ><i class="fa-solid fa-rss-square" title="Atom Feed"></i
+          ></a> </span
+        ><br />
+        <span style="font-size: small">
+          &copy; Copyright 2022 Niklas Conen&nbsp;
+        </span>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/jquery-3.7.0.min.js"></script>
+      </footer>
+    </div>
+  </body>
+</html>

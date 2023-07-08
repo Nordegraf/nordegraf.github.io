@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico" />
+
+    <title>
+      Looking into how the game Spiral Knights is built - Nordegraf's Blog
+    </title>
+  </head>
+  <body>
+    <div class="container py-3" style="max-width: 1100px">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Blog</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container px-1 py-1">
+        <h2>Looking into how the game Spiral Knights is built</h2>
+
+        <hr class="post-header" />
+
+        <p>
+          More than 10 years ago in 2012 I stumbled upon a game called Spiral
+          Knights in the Free-to-Play section of the Steam Store. The beautiful
+          neon-like color scheme, cute artstyle and lovely story got me hooked
+          quite fast. And so Spiral Knights became the second MMO I played a bit
+          more extensively after Lego Universe closed its gates the same year.
+        </p>
+
+        <!--more-->
+
+        <p>
+          Developed by Three Rings Design and published by SEGA Spiral Knights
+          is a quite grind heavy Top-Down Hack and Slash type game which sends
+          you on a quest through an ever changing set of gradually more
+          difficult missions in the so called Clockworks on the planet Cradle…
+          Well at least the advertising says that. While definitely being quite
+          diverse the actual reality is that the same missions are rotated on a
+          daily or weekly basis depending on the mission type. At some point
+          specific routes through the clockwork revealed themselves as the most
+          efficient for getting crafting materials resulting in me grinding only
+          these ones for hours. I still enjoyed my time on Cradle and I have
+          been revisiting the game ever so often over the past 10 years.
+        </p>
+
+        <p>
+          Sadly the game got less popular over time to a point were today the
+          games servers are mostly empty. Moreover Three Rings Design dissolved
+          in 2016 and a new company called Grey Havens consisting of old Three
+          Rings employees formed to keep some of their games alive. By now only
+          Spiral Knights and Puzzle Pirates are kept on life support.
+        </p>
+
+        <p>
+          Being interested in how games work behind the curtain I set out to
+          look into Spiral Knights game files to see what I’m able to
+          understand. I’ll summarize my findings a bit below.
+        </p>
+
+        <p>
+          In 2005 Three Rings launched a website called gamegardens.com and
+          wiki.gamegardens.com as a plattform for making games using their
+          developed Java libraries. Sadly the website is gone, but some captures
+          are availabe on the WaybackMachine. For gamegardens ThreeRings
+          published their libraries publicly on GitHub. Their core libraries
+          are:
+        </p>
+
+        <ul>
+          <li>
+            <a class="link" href="https://github.com/threerings/narya">Narya</a>
+            (mainly for networking)
+          </li>
+          <li>
+            <a class="link" href="https://github.com/threerings/nenya">Nenya</a>
+            (mainly for media management)
+          </li>
+          <li>
+            <a class="link" href="https://github.com/threerings/vilya">Vilya</a>
+            (some frameworks for specific game types)
+          </li>
+          <li>
+            <a class="link" href="https://github.com/threerings/clyde">Clyde</a>
+            (various utility)
+          </li>
+          <li>
+            <a class="link" href="https://github.com/threerings/getdown"
+              >getdown</a
+            >
+            (downloading and updating)
+          </li>
+        </ul>
+
+        <p>(They must be huge Tolkien fans)</p>
+
+        <p>
+          Moreover a core library they used is
+          <a class="link" href="https://legacy.lwjgl.org">LWJGL2</a>.
+        </p>
+
+        <p>
+          There are more libraries in the games folders, but the ones listed
+          above are probably the most important ones. In the code subdirectory
+          of the games main files is a library called
+          <code class="language-plaintext highlighter-rouge"
+            >projectx-pcode.jar</code
+          >. My best guess is, that most of the games core functionality is
+          build upon the libraries in this .jar, which includes code of their
+          open source libraries.
+        </p>
+
+        <p>
+          Clyde includes utility for importing and converting the games .dat
+          binary files to a human readable .xml format. As a first step I set
+          out to use this utility for converting the games .dat files to .xml.
+          In Clyde the import and export is done using the
+          <code class="language-plaintext highlighter-rouge"
+            >com.threerings.export.BinaryImport</code
+          >
+          and
+          <code class="language-plaintext highlighter-rouge"
+            >com.threerings.export.XMLExport</code
+          >
+          classes. In the games file these libraries are contained in the
+          <code class="language-plaintext highlighter-rouge"
+            >com.threerings.export.b</code
+          >
+          and
+          <code class="language-plaintext highlighter-rouge"
+            >com.threerings.export.aA</code
+          >
+          .class files. Using a bash script I installed the games
+          <code class="language-plaintext highlighter-rouge"
+            >projectx-pcode.jar</code
+          >
+          into a local maven repository making its source code available for
+          usage. Then I simply wrote a small app searching the games directory
+          for .dat files and then converting all of them to .xml. The apps code
+          is available on my
+          <a class="link" href="https://github.com/Nordegraf/SKdatToXML"
+            >GitHub</a
+          >
+          including the bash script.
+        </p>
+
+        <p>
+          The converted files contain a lot of information about missions,
+          items, worlds, models, etc. and mostly reference configuration classes
+          also contained in the
+          <code class="language-plaintext highlighter-rouge"
+            >projectx-pcode.jar</code
+          >. A nice small project would be a page listing all of the games
+          missions or items or similar, but for now I’ll leave this as is.
+        </p>
+
+        <!--Tags if any are given-->
+
+        <span style="font-size: small"
+          >This post is tagged with:
+
+          <a class="link" href="/tags/spiral_knights">spiral_knights</a>
+        </span>
+      </div>
+      <footer>
+        <hr class="footer" />
+        <span style="font-size: large">
+          <a class="link" href="https://github.com/Nordegraf"
+            ><i class="fa-brands fa-github" title="GitHub Account"></i></a
+          >&nbsp;
+          <a class="link" href="https://gitlab.com/nordegraf"
+            ><i class="fa-brands fa-gitlab" title="GitLab Account"></i></a
+          >&nbsp;
+          <a class="link" href="https://www.linkedin.com/in/niklas-conen/"
+            ><i class="fa-brands fa-linkedin" title="LinkedIn Account"></i></a
+          >&nbsp;
+          <a class="link" href="mailto:niklas.conen@student.kit.edu"
+            ><i class="fa-solid fa-envelope" title="E-Mail"></i></a
+          >&nbsp;
+          <a class="link" href="https://twitter.com/TheNichelangelo"
+            ><i class="fa-brands fa-twitter" title="Twitter Account"></i></a
+          >&nbsp;
+          <a class="link" href="/feed.xml"
+            ><i class="fa-solid fa-rss-square" title="Atom Feed"></i
+          ></a> </span
+        ><br />
+        <span style="font-size: small">
+          &copy; Copyright 2022 Niklas Conen&nbsp;
+        </span>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/jquery-3.7.0.min.js"></script>
+      </footer>
+    </div>
+  </body>
+</html>
