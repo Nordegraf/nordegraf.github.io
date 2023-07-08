@@ -4,13 +4,11 @@
       <div class="card-body" id="{{ post.id | append: 'text' }}">
         <p class="about"><time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
         <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="card-title">{{ post.title }}</h3></a>
-        <p class="card-text">
           {% if post.excerpt_separator %}
             {{ post.excerpt }}
           {% else %}
             {{ post.content | truncatewords: 60 }}
           {% endif %}
-        </p>
         <p class="card-text"><small class="text-muted">
           {% if post.tags.size > 0 %}
           <span style="font-size: small;">Tags:
