@@ -1,7 +1,7 @@
 var filters = null;
 
 // variables
-$.getJSON("https://nordegraf.github.io/plants/data", function(plants) {
+$.getJSON("https://nordegraf.github.io/plants/data.json", function(plants) {
   console.log(plants);
 
   var numPlants = plants.length;
