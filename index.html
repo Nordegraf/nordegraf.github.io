@@ -1,4 +1,25 @@
 ---
-layout: blog
+layout: default
 title: Blog Posts
+pagination:
+    enabled: true
+    collection: posts
 ---
+
+<!-- Blog Entries -->
+{% for post in paginator.posts %}
+  {% include preview.html %}
+{% endfor %}
+
+<script type="text/javascript">
+  function setDivHeight(textDiv, imgDiv) {
+    document.getElementById(imgDiv).setAttribute("style",`height: ${document.getElementById(textDiv).clientHeight}px;`)
+  }
+  {% for post in paginator.posts %}
+    {% if post.thumbnail %}
+      setDivHeight("{{ post.id | append: 'text' }}", "{{ post.id | append: 'img' }}")
+    {% endif %}
+  {% endfor %}
+</script>
+
+{% include pagination.html %}
