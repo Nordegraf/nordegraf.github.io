@@ -1,7 +1,5 @@
-var filters = null;
-
 // variables
-$.getJSON("https://nordegraf.github.io/plants/data.json", function(plants) {
+$.getJSON("/plants/data.json", function(plants) {
   console.log(plants);
 
   var numPlants = plants.length;
@@ -115,7 +113,11 @@ function addPlants(attr, value, plants) {
     var promises = [];
 
     for (var i = 0; i < plants.length; i++) {
-      if (plants[i][attr] == value) {
+      if (plants[i][attr].includes(value)) {
+        // check if hidden
+        if (plants[i]["hide"]) {
+          continue;
+        }
         promises.push(addPlant(i));
       }
     }
@@ -124,7 +126,7 @@ function addPlants(attr, value, plants) {
 }
 
 function addPlant(id) {
-  return $.get("https://nordegraf.github.io/plants/"+id+".html", function(data) {
+  return $.get("/plants/"+id+".html", function(data) {
     $("#plant-content").append(data);
   }).promise();
 }

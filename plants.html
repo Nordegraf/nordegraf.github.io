@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/plants.css" />
 
     <link rel="stylesheet" href="/assets/css/plants.css" />
 
@@ -15,7 +16,7 @@
   <body>
     <div class="container py-3" style="max-width: 1100px">
       <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
+        <div class="container-fluid navbarcontainer">
           <button
             class="navbar-toggler"
             type="button"
@@ -50,8 +51,6 @@
       </nav>
 
       <div class="container px-1 py-1">
-        <h2>Plants</h2>
-
         <div class="row row-cols-2 row-cols-sm-4 row-cols-md-6">
           <div class="col-md-2 accordion accordion-flush" id="accordioncountry">
             <div class="accordion-item">
@@ -132,6 +131,14 @@
                     data-rank=" 2 "
                   >
                     Masturah Dunes
+                  </button>
+
+                  <button
+                    class="btn btn-primary plant-category filter-button Saudi_Arabia Potato_Rock"
+                    id="location;Potato_Rock"
+                    data-rank=" 2 "
+                  >
+                    Potato Rock
                   </button>
 
                   <button
@@ -225,6 +232,8 @@
         </span>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/js/jquery-3.7.0.min.js"></script>
+        <script src="/assets/js/masonry.pkgd.min.js"></script>
+        <script src="/assets/js/masonry.js"></script>
 
         <script src="/assets/js/plant_library.js"></script>
       </footer>
