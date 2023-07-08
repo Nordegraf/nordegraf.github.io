@@ -124,7 +124,7 @@ function addPlants(attr, value, plants) {
 }
 
 function addPlant(id) {
-  return $.get("/plants/"+id+".html", function(data) {
+  return $.get("https://nordegraf.github.io//plants/"+id+".html", function(data) {
     $("#plant-content").append(data);
   }).promise();
 }
