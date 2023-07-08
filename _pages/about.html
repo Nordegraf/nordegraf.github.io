@@ -23,7 +23,7 @@ title: About Me
         {% endif %}
       </h2>
       <p class="about">
-        {% if degree.grade %}&#8709 {{ degree.grade }}<br>{% endif %}
+        {% if degree.grade %}&#8709; {{ degree.grade }}<br>{% endif %}
         <i class="fa-solid fa-calendar-days"></i> {{ degree.started }}
         {% if degree.finished != degree.started %} - {% if degree.finished %} {{ degree.finished }} {% else %} ongoing {% endif %} {% endif %}<br>
         <i class="fa-solid fa-location-dot"></i> {{ degree.location }}
@@ -105,7 +105,6 @@ Some conferences and workshops I attended:
   <div class="accordion-item about">
     <h2 class="accordion-header" id="flush-heading{{ sco }}">
       <h5 class="about">{{ scholarship.name }}</h5>
-      </button>
     </h2>
     <p class="about">
       <i class="fa-solid fa-calendar-days"></i> {{ scholarship.when }}<br>
