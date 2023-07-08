@@ -24,6 +24,7 @@ $border_hr: $primary;
 .plant-container {
     .image {
         width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -96,7 +97,7 @@ span.plant-filter {
     padding: 0 0rem;
 }
 
-button.filter-button {
+button.plant-category {
     color: $primary;
     background-color: rgba(0, 0, 0, 0.0);
     padding: 0 0.5rem;

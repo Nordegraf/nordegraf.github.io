@@ -2,19 +2,12 @@
 layout: empty
 style: /assets/css/plants.css
 ---
-
-<div class="row row-cols-2 row-cols-sm-4 row-cols-md-6">
-    {% for plant in page.plants %}
-    <a class="plant" href="{{ plant.url | relative_url }}">
-    <div class="col plant-container">
-      <div class="image-container">
-        <img src="{{ plant.images[0].path | relative_url }}" alt="" class="image">
-      </div>
-      <div class="overlay"></div>
-      <div class="plant-name">{{ plant.name }}</div>
+<a class="plant{% for attr in site.data.filter_attributes %} {{ page.plant[attr] | replace: ' ', '_' }}{% endfor %}" href="{{ page.plant.url | relative_url }}" id="{{ page.plant.oid }}">
+  <div class="col plant-container">
+    <div class="image-container">
+      <img src="{{ page.plant.images[0].path | relative_url }}" alt="" class="image">
     </div>
-    </a>
-    {% endfor %}
-</div>
-
-
+    <div class="overlay"></div>
+    <div class="plant-name">{{ page.plant.name }}</div>
+  </div>
+</a>

@@ -1,4 +1,5 @@
 require 'uri'
+require 'json'
 
 
 module Plants
@@ -6,36 +7,20 @@ module Plants
 
       include Jekyll::Filters
 
-      def initialize(site, base, dir, country = nil, location = nil, collection = nil)
+      def initialize(site, base, dir, id, plant)
         @site = site
         @base = base
         @ext = ".html"
+        @entries = 0
 
-        # Country
-        if country != nil and location == nil
-          @dir = dir + country + ext
-          @dir.gsub!(/\s/,'_')
-          @plants = site.collections['plants'].docs.select { |doc| doc.data['country'] == country }
-
-        # Country and location
-        elsif country != nil and location != nil
-          @dir = dir + country + "_" + location + ext
-          @dir.gsub!(/\s/,'_')
-          @plants = site.collections['plants'].docs.select { |doc| doc.data['country'] == country and doc.data['location'] == location }
-
-        # All plants
-        else
-          @dir = dir + "all" + ext
-          @plants = site.collections['plants'].docs
-        end
+        @dir = dir + id.to_s + ext
 
         @data = {
           'layout' => 'plant_filter',
-          'category' => collection,
-          'plants' => @plants,
-          'style' => '/assets/css/plants.css'
-          'country' => country,
-          'location' => location
+          'plant' => plant,
+          'style' => '/assets/css/plants.css',
+          'oid' => id,
+          'name' => plant.data['name']
         }
       end
 
@@ -48,43 +33,121 @@ module Plants
         }
       end
 
-    end
+      def entries()
+        @entries
+      end
 
+    end
 
 
     class Generator < Jekyll::Generator
       def generate(site)
-        # Get all countries in the plant collection
-        countries = site.collections['plants'].docs.map { |doc| doc.data['country'] }.uniq
+        # collect all possible attributes
+        site.data["filter_attributes"] = []
+        site.data["filter_values"] = {}
 
-        site.data['plant_countries'] = countries
-
-        # Get all locations by country
-        locations = {}
-        for country in countries
-          locations[country] = site.collections['plants'].docs.select { |doc| doc.data['country'] == country }.map { |doc| doc.data['location'] }.uniq
+        # get all attributes from the config file
+        site.config['plant_attributes'].each do |attr|
+          attr[1].each { |v|
+            site.data["filter_attributes"] << v
+          }
         end
 
-        site.data['plant_locations'] = locations
+        for attr in site.data["filter_attributes"]
+          site.data["filter_values"][attr] = site.collections['plants'].docs.map { |doc| doc.data[attr] }.uniq
+        end
 
-        Jekyll.logger.info "countries:", site.data['plant_countries']
-        Jekyll.logger.info "locations:", site.data['plant_locations']
+        # collect all other attributes
 
-        # Page for all plants
-        page = FilteredPage.new(site, site.source, '/plants/')
-        site.pages << page
-
-        for country in countries
-          # Create a new page for each country
-          page = FilteredPage.new(site, site.source, '/plants/', country)
+        site.collections['plants'].docs.each_with_index do |doc, i|
+          doc.data['oid'] = i
+          page = FilteredPage.new(site, site.source, '/plants/', i, doc)
           site.pages << page
+        end
 
-          # Create a new page for each location in the country
-          for location in locations[country]
-            page = FilteredPage.new(site, site.source, '/plants/', country, location)
-            site.pages << page
+        filter_classes(site, site.collections['plants'].docs[0])
+      end
+
+      def filter_classes(site, doc)
+        classes = {}
+        for doc in site.collections['plants'].docs
+          for cat in site.config["plant_attributes"].keys
+            cl = ""
+            for attr in site.config["plant_attributes"][cat]
+              unless doc.data[attr].nil?
+                # split lists and add each value as a class
+                value = doc.data[attr].gsub(/ /, '_')
+                cl += value + " "
+                classes[attr + ";" + value] = cl
+              end
+            end
           end
         end
+        site.data["filter_classes"] = classes
+        Jekyll.logger.info "classes: ", classes
       end
+
+      def jsonfy_plant_attributes(site, doc)
+        jsonstring = "{"
+        for cat in site.config["plant_attributes"].keys
+          num_attr = site.config["plant_attributes"][cat].length
+          first_attr = site.config["plant_attributes"][cat].first
+          jsonstring += "\"#{first_attr}\": ["
+
+          for attr in site.config["plant_attributes"][cat]
+            if attr == site.config["plant_attributes"][cat].last
+              jsonstring += "\"#{doc.data[attr]}\""
+              for i in 1..num_attr-1
+                jsonstring += "]}"
+              end
+            else
+              jsonstring += "{\"#{doc.data[attr]}\": ["
+            end
+          end
+          jsonstring += "]"
+          unless cat == site.config["plant_attributes"].keys.last
+            jsonstring += ","
+          end
+        end
+        jsonstring += "}"
+
+        doc.data['attr_json'] = jsonstring
+        Jekyll.logger.info "JSON: ", jsonstring
+      end
+
+      def generate_attribute_hierarchy(site)
+        for doc in site.collections['plants'].docs
+          jsonfy_plant_attributes(site, doc)
+        end
+
+        data = {}
+        for doc in site.collections['plants'].docs
+          docdata = JSON.load(doc.data['attr_json'])
+          data = merge_recursively(data, docdata)
+        end
+
+        Jekyll.logger.info "data: ", data
+        site.data["filter_hierarchy"] = data
+      end
+
+      def merge_recursively(a, b)
+        if a.is_a?(Hash) && b.is_a?(Hash)
+          a.merge(b) {|key, a_item, b_item| merge_recursively(a_item, b_item) }
+        elsif a.is_a?(Array) && b.is_a?(Array)
+          newl = a | b
+          # if array content are hashes, merge them
+          if a[0].is_a?(Hash) && b[0].is_a?(Hash)
+            newl = []
+            for i in 0..a.length-1
+              newl << merge_recursively(a[i], b[i])
+            end
+          end
+
+          newl
+        else
+          b
+        end
+      end
+
     end
 end

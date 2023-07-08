@@ -38,6 +38,19 @@ collections:
     output: true
     permalink: /:name
 
+plant_attributes:
+  # attributes must be unique!
+  # attributes are ordered by the order of appearance in the file
+  # place is defined by country => location
+  place:
+    - country
+    - location
+  #taxonomy:
+  #  - group
+  #  - family
+  #  - genus
+  #  - species
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

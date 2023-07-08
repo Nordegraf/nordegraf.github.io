@@ -1,0 +1,17 @@
+---
+permalink: /plants/data
+---
+[
+    {% for plant in site.plants %}
+      {
+        "id": "{{ plant.oid }}",
+        "name": "{{ plant.name }}"
+        {% for attr in site.data["filter_attributes"] %}
+            {% if plant[attr] %}
+            ,"{{ attr }}": "{{ plant[attr] }}"
+            {% endif %}
+        {% endfor %}
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
