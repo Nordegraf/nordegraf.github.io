@@ -7,8 +7,8 @@
 - name: Projects
   link: /projects
 
-- name: Contact
-  link: /contact
-
 - name: Plant Picture Library
   link: /plant-picture-library
+
+- name: Contact
+  link: /contact
