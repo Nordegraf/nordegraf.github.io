@@ -36,8 +36,8 @@ collections:
     permalink: /:name
 
   plants:
-    output: true
-    permalink: /:name
+    output: false
+    permalink: /:collection/:name
 
 plant_attributes:
   # attributes must be unique!

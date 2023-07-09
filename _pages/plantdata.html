@@ -11,9 +11,6 @@ permalink: /plants/data.json
             ,"{{ attr }}": ["{{ plant[attr] }}"]
             {% endif %}
         {% endfor %}
-        {% if plant["hide"] %}
-        ,"hide": true
-        {% endif %}
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}

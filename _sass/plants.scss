@@ -11,6 +11,10 @@ $text: rgb(164, 203, 209);
 
 $border_hr: $primary;
 
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins/breakpoints";
+
 .plant-container {
     position: relative;
     aspect-ratio: 1/1;
@@ -144,11 +148,13 @@ iframe.plant-map {
 
 .grid-item-carousel {
     width: calc(60% - 0.5rem);
+    min-width: 350px;
     height: fit-content;
     margin: 0 0.25rem;
 }
 
 .grid-item-profile {
+    min-width: 200px;
     width: calc(40% - 0.5rem);
     height: fit-content;
     margin: 0 0.25rem;
@@ -157,7 +163,6 @@ iframe.plant-map {
 }
 
 .grid-item-notes {
-    width: fit-content;
     max-width: calc(100% - 0.5rem);
     min-width: calc(60% - 0.5rem);
     height: auto;
@@ -166,3 +171,48 @@ iframe.plant-map {
     border: 2px solid $primary;
 }
 
+@include media-breakpoint-down(md) {
+    .grid-item-carousel {
+        width: calc(100% - 0.5rem);
+        min-width: 100%;
+    }
+
+    .grid-item-profile {
+        width: calc(100% - 0.5rem);
+        min-width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .grid-item-notes {
+        width: calc(100% - 0.5rem);
+        min-width: 100%;
+    }
+}
+
+.isogrid {
+    height: auto;
+}
+
+.element-item {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    padding: 10px;
+    background: #888;
+    color: #262524;
+  }
+
+  /* clear fix */
+.isogrid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+
+.element-item > * {
+    margin: 0;
+    padding: 0;
+  }

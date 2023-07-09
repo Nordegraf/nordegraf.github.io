@@ -1,26 +1,26 @@
 ---
-layout: default
 ---
-
-<h2>{{ page.name }}</h2>
 
 <div class="grid">
     <div class="grid-sizer"></div>
     <div class="grid-item grid-item-carousel">
         {% capture carouselname %}carousel{{ page.name | replace: ' ', ''}}{% endcapture %}
         <div id="carousel{{ carouselname }}" class="carousel slide" data-bs-ride="carousel">
+            {% if page.images.size > 1 %}
             <div class="carousel-indicators">
                 {% for img in page.images %}
-                <button type="button" data-bs-target="#carousel{{ carouselname }}" data-bs-slide-to="{{ forloop.index }}"{% if forloop.first %}class="active"{% endif %} aria-current="true" aria-label="{{ img.alt }}"></button>
+                <button type="button" data-bs-target="#carousel{{ carouselname }}" data-bs-slide-to="{{ forloop.index0 }}"{% if forloop.first %}class="active"{% endif %} aria-current="true" aria-label="{{ img.alt }}"></button>
                 {% endfor %}
             </div>
+            {% endif %}
             <div class="carousel-inner">
                 {% for img in page.images %}
                 <div class="carousel-item{% if forloop.first %} active{% endif %}">
-                    <img src="{{ img.path }}" class="d-block w-100 plant-img" alt="{{ img.alt }}">
+                    <img src="{{ img.path | relative_url }}" class="d-block w-100 plant-img" alt="{{ img.alt }}">
                 </div>
                 {% endfor %}
             </div>
+            {% if page.images.size > 1 %}
             <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ carouselname }}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -29,6 +29,7 @@ layout: default
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
             </button>
+            {% endif %}
         </div>
     </div>
     <div class="grid-item grid-item-profile">
