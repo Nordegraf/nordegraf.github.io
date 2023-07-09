@@ -5,6 +5,7 @@ description: >-
 baseurl:
 url: "https://nordegraf.github.io/"
 author: Niklas Conen
+year: 2023
 
 # Build settings
 plugins:
@@ -34,23 +35,6 @@ collections:
   pages:
     output: true
     permalink: /:name
-
-  plants:
-    output: false
-    permalink: /:collection/:name
-
-plant_attributes:
-  # attributes must be unique!
-  # attributes are ordered by the order of appearance in the file
-  # place is defined by country => location
-  place:
-    - country
-    - location
-  #taxonomy:
-  #  - group
-  #  - family
-  #  - genus
-  #  - species
 
 
 # Exclude from processing.
