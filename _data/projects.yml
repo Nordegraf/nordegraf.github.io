@@ -43,3 +43,14 @@
   img:
     - path: /assets/img/projects/cf-selbsthilfe/page.jpg
       description: screenshot of the website of the CF-Selbsthilfe Frankfurt e.V.
+
+- name: plant-picture-library
+  link: https://github.com/Nordegraf/plant-picture-library
+  description: A library for pictures of plants I took, or that were sent to me. Usually I document the process of identification of the plants and include some interesting facts about them.
+  img:
+    - path: /assets/img/projects/plant-picture-library/ruby_dock_2.jpg
+      description: A picture of ruby dock taken in Saudi Arabia
+    - path: /assets/img/projects/plant-picture-library/malva_sylvestris_1.jpg
+      description: A picture of common mallow taken in Germany
+    - path: /assets/img/projects/plant-picture-library/tagetes_erecta_1.jpg
+      description: A picture of french marigold taken in Germany
