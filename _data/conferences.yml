@@ -24,3 +24,12 @@
   link: https://cemse.kaust.edu.sa/events/event/5th-kaust-cemse-mas-workshop-modelling-and-simulation
   talk: Simulation of unsaturated density driven flow with a phreatic surface
   role: speaker
+
+- name: ENUMATH 2023
+  institution: Instituto Superior Técnico
+  city: Lisbon
+  country: Portugal
+  year: 2023
+  link: https://enumath2023.com
+  talk: Simulation of unsaturated density driven flow with a phreatic surface
+  role: speaker
