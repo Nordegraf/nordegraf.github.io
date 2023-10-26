@@ -1,9 +1,10 @@
 - name: Patient Advisory Board
   detail: Active member of the Patient Advisory Board of the Cystic Fibrosis clinic of the university hospital Frankfurt.
   started: 2019
+  finished: 2023
  
 - name: CF-Selbsthilfe Frankfurt eV
-  detail: Creation and maintenance of their website <a class="link" href="https://www.cf-selbsthilfe.de">cf-selbsthilfe.de</a>.
+  detail: Creation and maintenance of their website <a class="link" href="https://www.cf-selbsthilfe.de">cf-selbsthilfe.de</a>. Management of the digital infrastructure and organization of smaller Events like regular meetings.
   started: 2022
 
 - name: Mukoviszidose eV
